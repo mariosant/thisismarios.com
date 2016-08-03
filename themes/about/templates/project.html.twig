@@ -1,0 +1,25 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-md-8">
+            {{page.content}}
+        </div>
+        <div class="col-md-4">
+            <ul class="list-unstyled">
+                <li>
+                    <strong>Services:</strong> {{page.header.services}}
+                </li>
+                <li>
+                    <strong>Tech:</strong> {{page.header.tech}}
+                </li>
+                <li>
+                    <strong>When:</strong> {{page.date | date('F, Y')}}
+                </li>
+                <li>
+                    <strong>Client:</strong> <a href="{{page.header.client.website}}" target="_blank">{{page.header.client.name}} <i class="fa fa-external-link"></i></a>
+                </li>
+            </ul>
+        </div>
+    </div>
+{% endblock %}

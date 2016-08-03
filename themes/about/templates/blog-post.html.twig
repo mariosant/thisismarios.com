@@ -1,0 +1,11 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {{page.content}}
+
+            {% include "partials/about-author.html.twig" %}
+        </div>
+    </div>
+{% endblock %}

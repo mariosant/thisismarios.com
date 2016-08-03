@@ -1,0 +1,47 @@
+absolute_urls: false
+
+home:
+  alias: '/home'
+
+pages:
+  theme: about
+  process:
+    markdown: true
+    twig: false
+  markdown:
+    extra: true                            # Enable support for Markdown Extra support (GFM by default)
+    auto_line_breaks: true                 # Enable automatic line breaks
+    auto_url_links: false                   # Enable automatic HTML links
+    escape_markup: false                    # Escape markup tags into entities
+    special_chars:                          # List of special characters to automatically convert to entities
+      '>': 'gt'
+      '<': 'lt'
+cache:
+  enabled: false
+  check:
+    method: file
+  driver: auto
+  prefix: 'g'
+
+twig:
+  cache: true
+  debug: true
+  auto_reload: true
+  autoescape: false
+
+assets:
+  css_pipeline: false
+  css_minify: true
+  css_rewrite: true
+  js_pipeline: false
+  js_minify: true
+
+errors:
+  display: true
+  log: true
+
+debugger:
+  enabled: false
+  twig: true
+  shutdown:
+    close_connection: true

@@ -1,0 +1,35 @@
+{% extends 'base.html.twig' %}
+
+{% block content %}
+<div class="projects-index">
+    <div class="row">
+        <div class="col-lg-8 col-lg-offset-2 col-md-10 col-md-offset-1">
+            {{page.content}}
+        </div>
+
+        {% for project in page.collection() %}
+        <div class="col-md-6">
+            <div class="project">
+                <div class="project-header">
+                    <a href="{{project.header.client.website}}" target="_blank">{{project.media[project.header.primary_image].cropZoom(600,300).html()}}</a>
+                </div>
+                <div class="project-body">
+                    <h3 class="title">
+                        <a href="{{project.header.client.website}}" target="_blank">{{project.title}}</a>
+                    </h3>
+                    <ul class="list-unstyled">
+                        <li>
+                            <strong>Services:</strong> {{project.header.services | default('Web developer')}}
+                        </li>
+                        <li>
+                            <strong>Tech Stack:</strong> {{project.header.tech}}
+                        </li>
+                    </ul>
+                </div>
+            </div>
+        </div>
+        {% endfor %}
+
+    </div>
+</div>
+{% endblock %}
